@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns="http://www.laisha.org/gem"
+      xsi:schemaLocation="http://www.laisha.org/gem gem_schema.xsd">
+
+    <precious-gem id="g000001">
+        <name>Ruby</name>
+        <origin>Madagascar</origin>
+        <parameters colour="red" certified="true">
+            <transparency>5</transparency>
+            <facet-number>12</facet-number>
+        </parameters>
+        <registration-date>2021-12-07</registration-date>
+        <price>1302.41</price>
+        <value>5.2</value>
+    </precious-gem>
+
+    <precious-gem id="g000002">
+        <name>Sapphire</name>
+        <origin>Madagascar</origin>
+        <parameters colour="brown" certified="true">
+            <facet-number>14</facet-number>
+            <transparency>15</transparency>
+        </parameters>
+        <registration-date>2022-01-13</registration-date>
+        <price>260.70</price>
+        <value>0.79</value>
+    </precious-gem>
+
+    <precious-gem id="g000003">
+        <name>Diamond</name>
+        <origin>Russia</origin>
+        <parameters colour="white" certified="true">
+            <transparency>98</transparency>
+            <facet-number>12</facet-number>
+        </parameters>
+        <registration-date>2022-01-31</registration-date>
+        <price>1313.50</price>
+        <value>0.30</value>
+    </precious-gem>
+
+    <precious-gem id="g000004">
+        <name>Emerald</name>
+        <origin>Zambia</origin>
+        <parameters colour="green" certified="true">
+            <facet-number>8</facet-number>
+            <transparency>26</transparency>
+        </parameters>
+        <registration-date>2021-11-03</registration-date>
+        <price>1599.99</price>
+        <value>1.61</value>
+    </precious-gem>
+
+    <precious-gem id="g000005">
+        <name>Diamond</name>
+        <origin>Russia</origin>
+        <parameters colour="white" certified="true">
+            <transparency>98</transparency>
+            <facet-number>14</facet-number>
+        </parameters>
+        <registration-date>2021-11-21</registration-date>
+        <price>4533.00</price>
+        <value>0.82</value>
+    </precious-gem>
+
+    <precious-gem id="g000006">
+        <name>Ruby</name>
+        <origin>Madagascar</origin>
+        <parameters colour="red" certified="true">
+            <facet-number>12</facet-number>
+            <transparency>8</transparency>
+        </parameters>
+        <registration-date>2021-12-27</registration-date>
+        <price>1920.50</price>
+        <value>7.5</value>
+    </precious-gem>
+
+    <precious-gem id="g000007">
+        <name>Emerald</name>
+        <origin>Zambia</origin>
+        <parameters colour="green" certified="true">
+            <transparency>22</transparency>
+            <facet-number>12</facet-number>
+        </parameters>
+        <registration-date>2022-01-20</registration-date>
+        <price>4100.00</price>
+        <value>3.21</value>
+    </precious-gem>
+
+    <precious-gem id="g000008">
+        <name>Sapphire</name>
+        <origin>Madagascar</origin>
+        <parameters colour="blue" certified="true">
+            <facet-number>12</facet-number>
+            <transparency>13</transparency>
+        </parameters>
+        <registration-date>2022-02-13</registration-date>
+        <price>222.22</price>
+        <value>0.69</value>
+    </precious-gem>
+
+    <semiprecious-gem id="g000009">
+        <name>Charoite</name>
+        <origin>Russia</origin>
+        <parameters colour="violet" certified="true">
+            <transparency>2</transparency>
+            <facet-number>4</facet-number>
+        </parameters>
+        <registration-date>2021-12-26</registration-date>
+        <price>106.28</price>
+        <weight>1.5</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000010">
+        <name>Tourmaline</name>
+        <origin>South-Africa</origin>
+        <parameters colour="brown">
+            <transparency>22</transparency>
+            <facet-number>10</facet-number>
+        </parameters>
+        <registration-date>2022-02-11</registration-date>
+        <price>36.68</price>
+        <weight>0.42</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000011">
+        <name>Obsidian</name>
+        <origin>USA</origin>
+        <parameters colour="black" certified="true">
+            <facet-number>4</facet-number>
+            <transparency>1</transparency>
+        </parameters>
+        <registration-date>2022-01-16</registration-date>
+        <price>67.07</price>
+        <weight>9.64</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000012">
+        <name>Apatite</name>
+        <origin>Canada</origin>
+        <parameters colour="green">
+            <transparency>16</transparency>
+            <facet-number>10</facet-number>
+        </parameters>
+        <registration-date>2022-01-24</registration-date>
+        <price>43.15</price>
+        <weight>0.62</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000013">
+        <name>Andalusite</name>
+        <origin>Canada</origin>
+        <parameters colour="multicolour">
+            <transparency>21</transparency>
+            <facet-number>12</facet-number>
+        </parameters>
+        <registration-date>2022-01-23</registration-date>
+        <price>23.10</price>
+        <weight>0.42</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000014">
+        <name>Topaz</name>
+        <origin>Brazil</origin>
+        <parameters colour="black">
+            <facet-number>15</facet-number>
+            <transparency>33</transparency>
+        </parameters>
+        <registration-date>2021-09-23</registration-date>
+        <price>113.06</price>
+        <weight>5.13</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000015">
+        <name>Amber</name>
+        <origin>Australia</origin>
+        <parameters colour="brown">
+            <facet-number>12</facet-number>
+            <transparency>13</transparency>
+        </parameters>
+        <registration-date>2021-08-13</registration-date>
+        <price>23.06</price>
+        <weight>5.13</weight>
+    </semiprecious-gem>
+
+    <semiprecious-gem id="g000016">
+        <name>Nephritis</name>
+        <origin>Angola</origin>
+        <parameters colour="green">
+            <transparency>0</transparency>
+            <facet-number>4</facet-number>
+        </parameters>
+        <registration-date>2021-12-17</registration-date>
+        <price>19.99</price>
+        <weight>3.43</weight>
+    </semiprecious-gem>
+
+</gems>
