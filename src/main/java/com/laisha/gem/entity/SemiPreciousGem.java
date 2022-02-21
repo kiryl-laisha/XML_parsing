@@ -1,29 +1,32 @@
 package com.laisha.gem.entity;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 public class SemiPreciousGem extends AbstractGem {
 
-    private double gemWeight;
+    private double weight;
+
+    public SemiPreciousGem() {
+    }
 
     public SemiPreciousGem(String gemId,
-                           String gemName,
-                           String gemOrigin,
+                           String name,
+                           String originCountry,
                            GemVisualParameters parameters,
-                           Instant gemRegistrationDate,
-                           double gemWeight,
+                           LocalDate registrationDate,
+                           double weight,
                            BigDecimal price) {
-        super(gemId, gemName, gemOrigin, parameters, gemRegistrationDate, price);
-        this.gemWeight = gemWeight;
+        super(gemId, name, originCountry, parameters, registrationDate, price);
+        this.weight = weight;
     }
 
-    public double getGemWeight() {
-        return gemWeight;
+    public double getWeight() {
+        return weight;
     }
 
-    public void setGemWeight(double gemWeight) {
-        this.gemWeight = gemWeight;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     @Override
@@ -34,14 +37,14 @@ public class SemiPreciousGem extends AbstractGem {
 
         SemiPreciousGem that = (SemiPreciousGem) o;
 
-        return Double.compare(that.gemWeight, gemWeight) == 0;
+        return Double.compare(that.weight, weight) == 0;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
         long temp;
-        temp = Double.doubleToLongBits(gemWeight);
+        temp = Double.doubleToLongBits(weight);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -49,7 +52,7 @@ public class SemiPreciousGem extends AbstractGem {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("SemiPreciousGem{");
-        sb.append("gemWeight=").append(gemWeight);
+        sb.append("weight=").append(weight);
         sb.append('}');
         return sb.toString();
     }

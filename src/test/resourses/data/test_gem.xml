@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns="http://www.laisha.org/gem"
-      xsi:schemaLocation="http://www.laisha.org/gem gem_schema.xsd">
+      xsi:schemaLocation="http://www.laisha.org/gem test_gem_schema.xsd">
 
     <precious-gem id="g000001">
         <name>Ruby</name>
@@ -181,18 +181,6 @@
         <registration-date>2021-08-13</registration-date>
         <price>23.06</price>
         <weight>5.13</weight>
-    </semiprecious-gem>
-
-    <semiprecious-gem id="g000016">
-        <name>Nephritis</name>
-        <origin>Angola</origin>
-        <parameters colour="green">
-            <transparency>1</transparency>
-            <facet-number>4</facet-number>
-        </parameters>
-        <registration-date>2021-12-17</registration-date>
-        <price>19.99</price>
-        <weight>3.43</weight>
     </semiprecious-gem>
 
 </gems>

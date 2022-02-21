@@ -1,6 +1,6 @@
 package com.laisha.gem.entity;
 
-public enum gemColour {
+public enum GemColour {
 
     BLACK,
     BLUE,
@@ -16,8 +16,8 @@ public enum gemColour {
     private static final String UNDERSCORE = "_";
     private static final String HYPHEN = "-";
 
-    public static gemOrigin valueOfXmlContent(String content) {
-        return gemOrigin.valueOf(content.toUpperCase().replace(HYPHEN, UNDERSCORE));
+    public static GemColour valueOfXmlContent(String content) {
+        return GemColour.valueOf(content.toUpperCase().replace(HYPHEN, UNDERSCORE));
     }
 }
 

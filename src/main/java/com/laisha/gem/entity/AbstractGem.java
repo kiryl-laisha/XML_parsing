@@ -1,29 +1,33 @@
 package com.laisha.gem.entity;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 public abstract class AbstractGem {
 
     private String gemId;
-    private String gemName;
-    private String gemOrigin;
-    private GemVisualParameters gemParameters;
-    private Instant gemRegistrationDate;
-    private BigDecimal gemPrice;
+    private String name;
+    private String originCountry;
+    private GemVisualParameters parameters;
+    private LocalDate registrationDate;
+    private BigDecimal price;
+
+    protected AbstractGem() {
+        parameters = new GemVisualParameters();
+    }
 
     protected AbstractGem(String gemId,
-                String gemName,
-                String gemOrigin,
-                GemVisualParameters gemParameters,
-                Instant gemRegistrationDate,
-                BigDecimal gemPrice) {
+                          String name,
+                          String originCountry,
+                          GemVisualParameters parameters,
+                          LocalDate registrationDate,
+                          BigDecimal price) {
         this.gemId = gemId;
-        this.gemName = gemName;
-        this.gemOrigin = gemOrigin;
-        this.gemParameters = gemParameters;
-        this.gemRegistrationDate = gemRegistrationDate;
-        this.gemPrice = gemPrice;
+        this.name = name;
+        this.originCountry = originCountry;
+        this.parameters = parameters;
+        this.registrationDate = registrationDate;
+        this.price = price;
     }
 
     public String getGemId() {
@@ -34,44 +38,44 @@ public abstract class AbstractGem {
         this.gemId = gemId;
     }
 
-    public String getGemName() {
-        return gemName;
+    public String getName() {
+        return name;
     }
 
-    public void setGemName(String gemName) {
-        this.gemName = gemName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getGemOrigin() {
-        return gemOrigin;
+    public String getOriginCountry() {
+        return originCountry;
     }
 
-    public void setGemOrigin(String gemOrigin) {
-        this.gemOrigin = gemOrigin;
+    public void setOriginCountry(String originCountry) {
+        this.originCountry = originCountry;
     }
 
-    public GemVisualParameters getGemParameters() {
-        return gemParameters;
+    public GemVisualParameters getParameters() {
+        return parameters;
     }
 
-    public void setGemParameters(GemVisualParameters gemParameters) {
-        this.gemParameters = gemParameters;
+    public void setParameters(GemVisualParameters parameters) {
+        this.parameters = parameters;
     }
 
-    public Instant getGemRegistrationDate() {
-        return gemRegistrationDate;
+    public LocalDate getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setGemRegistrationDate(Instant gemRegistrationDate) {
-        this.gemRegistrationDate = gemRegistrationDate;
+    public void setRegistrationDate(LocalDate registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
-    public BigDecimal getGemPrice() {
-        return gemPrice;
+    public BigDecimal getPrice() {
+        return price;
     }
 
-    public void setGemPrice(BigDecimal gemPrice) {
-        this.gemPrice = gemPrice;
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     @Override
@@ -83,38 +87,38 @@ public abstract class AbstractGem {
 
         if (gemId != null ? !gemId.equals(that.gemId) : that.gemId != null)
             return false;
-        if (gemName != null ? !gemName.equals(that.gemName) : that.gemName != null)
+        if (name != null ? !name.equals(that.name) : that.name != null)
             return false;
-        if (gemOrigin != null ? !gemOrigin.equals(that.gemOrigin) : that.gemOrigin != null)
+        if (originCountry != null ? !originCountry.equals(that.originCountry) : that.originCountry != null)
             return false;
-        if (gemParameters != null ? !gemParameters.equals(that.gemParameters) : that.gemParameters != null)
+        if (parameters != null ? !parameters.equals(that.parameters) : that.parameters != null)
             return false;
-        if (gemRegistrationDate != null ? !gemRegistrationDate.equals(that.gemRegistrationDate) : that.gemRegistrationDate != null)
+        if (registrationDate != null ? !registrationDate.equals(that.registrationDate) : that.registrationDate != null)
             return false;
-        return gemPrice != null ? gemPrice.equals(that.gemPrice) : that.gemPrice == null;
+        return price != null ? price.equals(that.price) : that.price == null;
     }
 
     @Override
     public int hashCode() {
         int result = gemId != null ? gemId.hashCode() : 0;
-        result = 31 * result + (gemName != null ? gemName.hashCode() : 0);
-        result = 31 * result + (gemOrigin != null ? gemOrigin.hashCode() : 0);
-        result = 31 * result + (gemParameters != null ? gemParameters.hashCode() : 0);
-        result = 31 * result + (gemRegistrationDate != null ? gemRegistrationDate.hashCode() : 0);
-        result = 31 * result + (gemPrice != null ? gemPrice.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (originCountry != null ? originCountry.hashCode() : 0);
+        result = 31 * result + (parameters != null ? parameters.hashCode() : 0);
+        result = 31 * result + (registrationDate != null ? registrationDate.hashCode() : 0);
+        result = 31 * result + (price != null ? price.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("AbstractGem{");
+        final StringBuilder sb = new StringBuilder();
         sb.append("gemId='").append(gemId).append('\'');
-        sb.append(", gemName='").append(gemName).append('\'');
-        sb.append(", gemOrigin='").append(gemOrigin).append('\'');
-        sb.append(", gemParameters=").append(gemParameters);
-        sb.append(", gemRegistrationDate=").append(gemRegistrationDate);
-        sb.append(", price=").append(gemPrice);
-        sb.append('}');
+        sb.append(", gemName='").append(name).append('\'');
+        sb.append(", gemOrigin='").append(originCountry).append('\'');
+        sb.append(", gemParameters=").append(parameters);
+        sb.append(", gemRegistrationDate=").append(registrationDate);
+        sb.append(", price=").append(price);
+        sb.append(", ");
         return sb.toString();
     }
 }

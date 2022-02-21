@@ -1,6 +1,6 @@
 package com.laisha.gem.entity;
 
-public enum gemOrigin {
+public enum GemOriginCountry {
 
     ANGOLA,
     AUSTRALIA,
@@ -15,7 +15,7 @@ public enum gemOrigin {
     private static final String UNDERSCORE = "_";
     private static final String HYPHEN = "-";
 
-    public static gemOrigin valueOfXmlContent(String content) {
-        return gemOrigin.valueOf(content.toUpperCase().replace(HYPHEN, UNDERSCORE));
+    public static GemOriginCountry valueOfXmlContent(String content) {
+        return GemOriginCountry.valueOf(content.toUpperCase().replace(HYPHEN, UNDERSCORE));
     }
 }

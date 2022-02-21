@@ -2,59 +2,56 @@ package com.laisha.gem.entity;
 
 public class GemVisualParameters {
 
-    private String gemColour;
-    private int gemTransparency;
-    private int gemFacetNumber;
-    private boolean certifiedGem = false;
+    public static final boolean DEFAULT_CERTIFIED_GEM = false;
 
-    public GemVisualParameters(String gemColour,
-                               int gemTransparency,
-                               int gemFacetNumber) {
-        this.gemColour = gemColour;
-        this.gemTransparency = gemTransparency;
-        this.gemFacetNumber = gemFacetNumber;
+    private String colour;
+    private boolean certified;
+    private int facetNumber;
+    private int transparency;
+
+    public GemVisualParameters() {
     }
 
     public GemVisualParameters(String gemColour,
-                               int gemTransparency,
-                               int gemFacetNumber,
+                               int facetNumber,
+                               int transparency,
                                boolean certified) {
-        this.gemColour = gemColour;
-        this.gemTransparency = gemTransparency;
-        this.gemFacetNumber = gemFacetNumber;
-        this.certifiedGem = certified;
+        this.colour = gemColour;
+        this.facetNumber = facetNumber;
+        this.transparency = transparency;
+        this.certified = certified;
     }
 
-    public String getGemColour() {
-        return gemColour;
+    public String getColour() {
+        return colour;
     }
 
-    public void setGemColour(String gemColour) {
-        this.gemColour = gemColour;
+    public void setColour(String colour) {
+        this.colour = colour;
     }
 
-    public int getGemTransparency() {
-        return gemTransparency;
+    public int getTransparency() {
+        return transparency;
     }
 
-    public void setGemTransparency(int gemTransparency) {
-        this.gemTransparency = gemTransparency;
+    public void setTransparency(int transparency) {
+        this.transparency = transparency;
     }
 
-    public int getGemFacetNumber() {
-        return gemFacetNumber;
+    public int getFacetNumber() {
+        return facetNumber;
     }
 
-    public void setGemFacetNumber(int gemFacetNumber) {
-        this.gemFacetNumber = gemFacetNumber;
+    public void setFacetNumber(int facetNumber) {
+        this.facetNumber = facetNumber;
     }
 
-    public boolean isCertifiedGem() {
-        return certifiedGem;
+    public boolean getCertified() {
+        return certified;
     }
 
-    public void setCertifiedGem(boolean certifiedGem) {
-        this.certifiedGem = certifiedGem;
+    public void setCertified(boolean certified) {
+        this.certified = certified;
     }
 
     @Override
@@ -64,28 +61,28 @@ public class GemVisualParameters {
 
         GemVisualParameters that = (GemVisualParameters) o;
 
-        if (gemTransparency != that.gemTransparency) return false;
-        if (gemFacetNumber != that.gemFacetNumber) return false;
-        if (certifiedGem != that.certifiedGem) return false;
-        return gemColour != null ? gemColour.equals(that.gemColour) : that.gemColour == null;
+        if (transparency != that.transparency) return false;
+        if (facetNumber != that.facetNumber) return false;
+        if (certified != that.certified) return false;
+        return colour != null ? colour.equals(that.colour) : that.colour == null;
     }
 
     @Override
     public int hashCode() {
-        int result = gemColour != null ? gemColour.hashCode() : 0;
-        result = 31 * result + gemTransparency;
-        result = 31 * result + gemFacetNumber;
-        result = 31 * result + (certifiedGem ? 1 : 0);
+        int result = colour != null ? colour.hashCode() : 0;
+        result = 31 * result + transparency;
+        result = 31 * result + facetNumber;
+        result = 31 * result + (certified ? 1 : 0);
         return result;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("GemVisualParameters{");
-        sb.append("gemColour='").append(gemColour).append('\'');
-        sb.append(", gemTransparency=").append(gemTransparency);
-        sb.append(", gemFacetNumber=").append(gemFacetNumber);
-        sb.append(", certifiedGem=").append(certifiedGem);
+        sb.append("gemColour='").append(colour).append('\'');
+        sb.append(", gemTransparency=").append(transparency);
+        sb.append(", gemFacetNumber=").append(facetNumber);
+        sb.append(", certifiedGem=").append(certified);
         sb.append('}');
         return sb.toString();
     }

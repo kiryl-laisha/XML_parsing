@@ -1,29 +1,32 @@
 package com.laisha.gem.entity;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 public class PreciousGem extends AbstractGem {
 
-    private double gemValue;
+    private double value;
+
+    public PreciousGem() {
+    }
 
     public PreciousGem(String gemId,
-                       String gemName,
-                       String gemOrigin,
+                       String name,
+                       String originCountry,
                        GemVisualParameters parameters,
-                       Instant gemRegistrationDate,
-                       double gemValue,
+                       LocalDate registrationDate,
+                       double value,
                        BigDecimal price) {
-        super(gemId, gemName, gemOrigin, parameters, gemRegistrationDate, price);
-        this.gemValue = gemValue;
+        super(gemId, name, originCountry, parameters, registrationDate, price);
+        this.value = value;
     }
 
-    public double getGemValue() {
-        return gemValue;
+    public double getValue() {
+        return value;
     }
 
-    public void setGemValue(double gemValue) {
-        this.gemValue = gemValue;
+    public void setValue(double value) {
+        this.value = value;
     }
 
     @Override
@@ -34,14 +37,14 @@ public class PreciousGem extends AbstractGem {
 
         PreciousGem that = (PreciousGem) o;
 
-        return Double.compare(that.gemValue, gemValue) == 0;
+        return Double.compare(that.value, value) == 0;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
         long temp;
-        temp = Double.doubleToLongBits(gemValue);
+        temp = Double.doubleToLongBits(value);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -49,7 +52,8 @@ public class PreciousGem extends AbstractGem {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("PreciousGem{");
-        sb.append("gemValue=").append(gemValue);
+        sb.append(super.toString());
+        sb.append("value=").append(value);
         sb.append('}');
         return sb.toString();
     }
