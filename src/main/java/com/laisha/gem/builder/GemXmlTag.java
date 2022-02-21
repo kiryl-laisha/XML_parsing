@@ -1,4 +1,4 @@
-package com.laisha.gem.builder.handler;
+package com.laisha.gem.builder;
 
 public enum GemXmlTag {
 
@@ -11,7 +11,7 @@ public enum GemXmlTag {
     FACET_NUMBER,
     ID,
     NAME,
-    ORIGIN,
+    ORIGIN_COUNTRY,
     REGISTRATION_DATE,
     PRICE,
     TRANSPARENCY,

@@ -1,5 +1,6 @@
 package com.laisha.gem.builder.handler;
 
+import com.laisha.gem.builder.GemXmlTag;
 import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
@@ -79,7 +80,7 @@ public class GemHandler extends DefaultHandler {
                 case NAME:
                     currentGem.setName(currentData);
                     break;
-                case ORIGIN:
+                case ORIGIN_COUNTRY:
                     currentGem.setOriginCountry(currentData);
                     break;
                 case REGISTRATION_DATE:

@@ -14,15 +14,15 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class SaxGemBuilderTest {
+class DomGemBuilderTest {
 
-    private static final String TEST_GEM_XML_FILEPATH ="data\\test_gem.xml";
-    private static final String TEST_GEM_EMPTY_XML_FILEPATH ="data/test_empty_file.xml";
-    private static SaxGemBuilder builder = new SaxGemBuilder();
+    private static final String TEST_GEM_XML_FILEPATH = "data\\test_gem.xml";
+    private static final String TEST_GEM_EMPTY_XML_FILEPATH = "data/test_empty_file.xml";
+    private static DomGemBuilder builder = new DomGemBuilder();
 
     @BeforeEach
     void setUp() {
-        builder = new SaxGemBuilder();
+        builder = new DomGemBuilder();
     }
 
     @AfterAll

@@ -21,7 +21,7 @@
     <complexType name="abstractGem">
         <sequence>
             <element name="name" type="gm:gemName"/>
-            <element name="origin" type="gm:gemOrigin"/>
+            <element name="origin-country" type="gm:gemOrigin"/>
             <element name="parameters" type="gm:gemParameters"/>
             <element name="registration-date" type="date"/>
             <element name="price" type="gm:gemPrice"/>

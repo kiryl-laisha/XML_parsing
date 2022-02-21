@@ -5,7 +5,7 @@
 
     <precious-gem id="g000001">
         <name>Ruby</name>
-        <origin>Madagascar</origin>
+        <origin-country>Madagascar</origin-country>
         <parameters colour="red" certified="true">
             <transparency>5</transparency>
             <facet-number>12</facet-number>
@@ -17,7 +17,7 @@
 
     <precious-gem id="g000002">
         <name>Sapphire</name>
-        <origin>Madagascar</origin>
+        <origin-country>Madagascar</origin-country>
         <parameters colour="brown" certified="true">
             <facet-number>14</facet-number>
             <transparency>15</transparency>
@@ -29,7 +29,7 @@
 
     <precious-gem id="g000003">
         <name>Diamond</name>
-        <origin>Russia</origin>
+        <origin-country>Russia</origin-country>
         <parameters colour="white" certified="true">
             <transparency>98</transparency>
             <facet-number>12</facet-number>
@@ -41,7 +41,7 @@
 
     <precious-gem id="g000004">
         <name>Emerald</name>
-        <origin>Zambia</origin>
+        <origin-country>Zambia</origin-country>
         <parameters colour="green" certified="true">
             <facet-number>8</facet-number>
             <transparency>26</transparency>
@@ -53,7 +53,7 @@
 
     <precious-gem id="g000005">
         <name>Diamond</name>
-        <origin>Russia</origin>
+        <origin-country>Russia</origin-country>
         <parameters colour="white" certified="true">
             <transparency>98</transparency>
             <facet-number>14</facet-number>
@@ -65,7 +65,7 @@
 
     <precious-gem id="g000006">
         <name>Ruby</name>
-        <origin>Madagascar</origin>
+        <origin-country>Madagascar</origin-country>
         <parameters colour="red" certified="true">
             <facet-number>12</facet-number>
             <transparency>8</transparency>
@@ -77,7 +77,7 @@
 
     <precious-gem id="g000007">
         <name>Emerald</name>
-        <origin>Zambia</origin>
+        <origin-country>Zambia</origin-country>
         <parameters colour="green" certified="true">
             <transparency>22</transparency>
             <facet-number>12</facet-number>
@@ -89,7 +89,7 @@
 
     <precious-gem id="g000008">
         <name>Sapphire</name>
-        <origin>Madagascar</origin>
+        <origin-country>Madagascar</origin-country>
         <parameters colour="blue" certified="true">
             <facet-number>12</facet-number>
             <transparency>13</transparency>
@@ -101,7 +101,7 @@
 
     <semiprecious-gem id="g000009">
         <name>Charoite</name>
-        <origin>Russia</origin>
+        <origin-country>Russia</origin-country>
         <parameters colour="violet" certified="true">
             <transparency>2</transparency>
             <facet-number>4</facet-number>
@@ -113,7 +113,7 @@
 
     <semiprecious-gem id="g000010">
         <name>Tourmaline</name>
-        <origin>South-Africa</origin>
+        <origin-country>South-Africa</origin-country>
         <parameters colour="brown">
             <transparency>22</transparency>
             <facet-number>10</facet-number>
@@ -125,7 +125,7 @@
 
     <semiprecious-gem id="g000011">
         <name>Obsidian</name>
-        <origin>USA</origin>
+        <origin-country>USA</origin-country>
         <parameters colour="black" certified="true">
             <facet-number>4</facet-number>
             <transparency>1</transparency>
@@ -137,7 +137,7 @@
 
     <semiprecious-gem id="g000012">
         <name>Apatite</name>
-        <origin>Canada</origin>
+        <origin-country>Canada</origin-country>
         <parameters colour="green">
             <transparency>16</transparency>
             <facet-number>10</facet-number>
@@ -149,7 +149,7 @@
 
     <semiprecious-gem id="g000013">
         <name>Andalusite</name>
-        <origin>Canada</origin>
+        <origin-country>Canada</origin-country>
         <parameters colour="multicolour">
             <transparency>21</transparency>
             <facet-number>12</facet-number>
@@ -161,7 +161,7 @@
 
     <semiprecious-gem id="g000014">
         <name>Topaz</name>
-        <origin>Brazil</origin>
+        <origin-country>Brazil</origin-country>
         <parameters colour="black">
             <facet-number>15</facet-number>
             <transparency>33</transparency>
@@ -173,7 +173,7 @@
 
     <semiprecious-gem id="g000015">
         <name>Amber</name>
-        <origin>Australia</origin>
+        <origin-country>Australia</origin-country>
         <parameters colour="brown">
             <facet-number>12</facet-number>
             <transparency>13</transparency>
@@ -185,7 +185,7 @@
 
     <semiprecious-gem id="g000016">
         <name>Nephritis</name>
-        <origin>Angola</origin>
+        <origin-country>Angola</origin-country>
         <parameters colour="green">
             <transparency>1</transparency>
             <facet-number>4</facet-number>
