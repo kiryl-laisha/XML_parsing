@@ -82,17 +82,15 @@ public abstract class AbstractGem {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         AbstractGem that = (AbstractGem) o;
-
         if (gemId != null ? !gemId.equals(that.gemId) : that.gemId != null)
             return false;
         if (name != null ? !name.equals(that.name) : that.name != null)
             return false;
-        if (originCountry != null ? !originCountry.equals(that.originCountry) : that.originCountry != null)
-            return false;
+        if (originCountry != that.originCountry) return false;
         if (parameters != null ? !parameters.equals(that.parameters) : that.parameters != null)
             return false;
         if (registrationDate != null ? !registrationDate.equals(that.registrationDate) : that.registrationDate != null)
@@ -102,6 +100,7 @@ public abstract class AbstractGem {
 
     @Override
     public int hashCode() {
+
         int result = gemId != null ? gemId.hashCode() : 0;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (originCountry != null ? originCountry.hashCode() : 0);
@@ -113,14 +112,14 @@ public abstract class AbstractGem {
 
     @Override
     public String toString() {
+
         final StringBuilder sb = new StringBuilder();
         sb.append("gemId='").append(gemId).append('\'');
-        sb.append(", gemName='").append(name).append('\'');
-        sb.append(", gemOrigin='").append(originCountry).append('\'');
-        sb.append(", gemParameters=").append(parameters);
-        sb.append(", gemRegistrationDate=").append(registrationDate);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", originCountry=").append(originCountry);
+        sb.append(", ").append(parameters.toString());
+        sb.append(", registrationDate=").append(registrationDate);
         sb.append(", price=").append(price);
-        sb.append(", ");
         return sb.toString();
     }
 }

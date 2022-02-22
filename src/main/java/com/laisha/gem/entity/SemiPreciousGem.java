@@ -33,17 +33,17 @@ public class SemiPreciousGem extends AbstractGem {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof SemiPreciousGem)) return false;
         if (!super.equals(o)) return false;
-
         SemiPreciousGem that = (SemiPreciousGem) o;
-
         return Double.compare(that.weight, weight) == 0;
     }
 
     @Override
     public int hashCode() {
+
         int result = super.hashCode();
         long temp;
         temp = Double.doubleToLongBits(weight);
@@ -54,6 +54,7 @@ public class SemiPreciousGem extends AbstractGem {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("SemiPreciousGem{");
+        sb.append(super.toString());
         sb.append("weight=").append(weight);
         sb.append('}');
         return sb.toString();

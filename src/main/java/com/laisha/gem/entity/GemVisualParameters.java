@@ -61,9 +61,7 @@ public class GemVisualParameters {
 
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         GemVisualParameters that = (GemVisualParameters) o;
-
         if (transparency != that.transparency) return false;
         if (facetNumber != that.facetNumber) return false;
         if (isCertified != that.isCertified) return false;
@@ -82,6 +80,7 @@ public class GemVisualParameters {
 
     @Override
     public String toString() {
+
         final StringBuilder sb = new StringBuilder("GemVisualParameters{");
         sb.append("colour=").append(colour);
         sb.append(", isCertified=").append(isCertified);
