@@ -5,7 +5,7 @@ import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
 import com.laisha.gem.exception.ProjectException;
-import com.laisha.gem.util.FileContentDefinition;
+import com.laisha.gem.util.ContentedFileDefinition;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +28,7 @@ import java.util.List;
 public class DomGemBuilder extends AbstractGemBuilder {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final FileContentDefinition fileContent = FileContentDefinition.getInstance();
+    private static final ContentedFileDefinition fileContent = ContentedFileDefinition.getInstance();
     private DocumentBuilder documentBuilder;
     private AbstractGem currentGem;
 

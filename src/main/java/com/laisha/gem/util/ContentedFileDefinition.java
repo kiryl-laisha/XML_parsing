@@ -6,16 +6,16 @@ import com.laisha.gem.validator.impl.FilePathValidatorImpl;
 import java.io.File;
 import java.net.URL;
 
-public class FileContentDefinition {
+public class ContentedFileDefinition {
 
-    private static final FileContentDefinition instance = new FileContentDefinition();
+    private static final ContentedFileDefinition instance = new ContentedFileDefinition();
     private static final String WINDOWS_DIRECTORY_SEPARATOR = "\\";
     private static final String UNIX_DIRECTORY_SEPARATOR = "/";
 
-    private FileContentDefinition() {
+    private ContentedFileDefinition() {
     }
 
-    public static FileContentDefinition getInstance() {
+    public static ContentedFileDefinition getInstance() {
         return instance;
     }
 

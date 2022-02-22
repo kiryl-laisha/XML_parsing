@@ -3,7 +3,7 @@ package com.laisha.gem.builder;
 import com.laisha.gem.builder.handler.GemErrorHandler;
 import com.laisha.gem.builder.handler.GemHandler;
 import com.laisha.gem.exception.ProjectException;
-import com.laisha.gem.util.FileContentDefinition;
+import com.laisha.gem.util.ContentedFileDefinition;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,7 +19,7 @@ import java.io.IOException;
 public class SaxGemBuilder extends AbstractGemBuilder {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final FileContentDefinition fileContent = FileContentDefinition.getInstance();
+    private static final ContentedFileDefinition fileContent = ContentedFileDefinition.getInstance();
     private final GemHandler handler;
     private XMLReader reader;
 
