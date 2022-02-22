@@ -67,6 +67,7 @@ public class DomGemBuilder extends AbstractGemBuilder {
                 gems.add(currentGem);
             }
         }
+        currentGem = null;
     }
 
     private void buildAbstractGem(Element gemElement) {
@@ -95,31 +96,32 @@ public class DomGemBuilder extends AbstractGemBuilder {
         String facetNumber = getElementTextContent(parameters, GemXmlTag.FACET_NUMBER.toString());
         String transparency = getElementTextContent(parameters, GemXmlTag.TRANSPARENCY.toString());
         String colour = parameters.getAttribute(GemXmlTag.COLOUR.toString());
-        String certified = parameters.getAttribute(GemXmlTag.COLOUR.toString());
-        if (!certified.isEmpty()) {
-            certified = String.valueOf(GemVisualParameters.DEFAULT_IS_CERTIFIED);
+        String isCertified = parameters.getAttribute(GemXmlTag.IS_CERTIFIED.toString());
+        if (!isCertified.isEmpty()) {
+            isCertified = GemVisualParameters.DEFAULT_IS_CERTIFIED;
         }
-        GemVisualParameters visualParameters = new GemVisualParameters(
+        GemVisualParameters currentParameters = new GemVisualParameters(
                 GemColour.valueOfXmlContent(colour),
                 Integer.parseInt(facetNumber),
                 Integer.parseInt(transparency),
-                Boolean.parseBoolean(certified));
-        currentGem.setParameters(visualParameters);
+                Boolean.parseBoolean(isCertified));
+        currentGem.setParameters(currentParameters);
     }
 
     private void buildPreciousGem(Element gemElement) {
 
-        String value = getElementTextContent(gemElement, GemXmlTag.VALUE.toString()).toUpperCase();
+        String value = getElementTextContent(gemElement, GemXmlTag.VALUE.toString());
         ((PreciousGem) currentGem).setValue(Double.parseDouble(value));
     }
 
     private void buildSemipreciousGem(Element gemElement) {
 
-        String weight = getElementTextContent(gemElement, GemXmlTag.WEIGHT.toString()).toUpperCase();
+        String weight = getElementTextContent(gemElement, GemXmlTag.WEIGHT.toString());
         ((SemiPreciousGem) currentGem).setWeight(Double.parseDouble(weight));
     }
 
     private static String getElementTextContent(Element element, String elementName) {
+
         NodeList nodes = element.getElementsByTagName(elementName);
         Node node = nodes.item(0);
         return node.getTextContent();
