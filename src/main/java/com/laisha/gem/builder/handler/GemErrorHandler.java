@@ -12,19 +12,19 @@ public class GemErrorHandler implements ErrorHandler {
 
     @Override
     public void warning(SAXParseException e) {
-        logger.log(Level.WARN, "Line \"{}\", column \"{}\".  There's a warning :{}.",
+        logger.log(Level.WARN, "Line \"{}\", column \"{}\". Warning is occurred: {}.",
                 e.getLineNumber(), e.getColumnNumber(), e.getMessage());
     }
 
     @Override
     public void error(SAXParseException e) {
-        logger.log(Level.ERROR, "Line \"{}\", column \"{}\".  There's a error :{}.",
+        logger.log(Level.WARN, "Line \"{}\", column \"{}\". Error is occurred: {}.",
                 e.getLineNumber(), e.getColumnNumber(), e.getMessage());
     }
 
     @Override
     public void fatalError(SAXParseException e) {
-        logger.log(Level.FATAL, "Line \"{}\", column \"{}\".  There's a fatal error :{}.",
+        logger.log(Level.WARN, "Line \"{}\", column \"{}\". Fatal error is occurred:{}.",
                 e.getLineNumber(), e.getColumnNumber(), e.getMessage());
     }
 }

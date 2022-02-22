@@ -1,5 +1,7 @@
 package com.laisha.gem.entity;
 
+import com.laisha.gem.entity.enums.GemOriginCountry;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -7,7 +9,7 @@ public abstract class AbstractGem {
 
     private String gemId;
     private String name;
-    private String originCountry;
+    private GemOriginCountry originCountry;
     private GemVisualParameters parameters;
     private LocalDate registrationDate;
     private BigDecimal price;
@@ -18,7 +20,7 @@ public abstract class AbstractGem {
 
     protected AbstractGem(String gemId,
                           String name,
-                          String originCountry,
+                          GemOriginCountry originCountry,
                           GemVisualParameters parameters,
                           LocalDate registrationDate,
                           BigDecimal price) {
@@ -46,11 +48,11 @@ public abstract class AbstractGem {
         this.name = name;
     }
 
-    public String getOriginCountry() {
+    public GemOriginCountry getOriginCountry() {
         return originCountry;
     }
 
-    public void setOriginCountry(String originCountry) {
+    public void setOriginCountry(GemOriginCountry originCountry) {
         this.originCountry = originCountry;
     }
 

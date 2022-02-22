@@ -5,6 +5,7 @@ import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
+import com.laisha.gem.entity.enums.GemOriginCountry;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -81,7 +82,7 @@ public class GemHandler extends DefaultHandler {
                     currentGem.setName(currentData);
                     break;
                 case ORIGIN_COUNTRY:
-                    currentGem.setOriginCountry(currentData);
+                    currentGem.setOriginCountry(GemOriginCountry.valueOfXmlContent(currentData));
                     break;
                 case REGISTRATION_DATE:
                     currentGem.setRegistrationDate(LocalDate.parse(currentData));

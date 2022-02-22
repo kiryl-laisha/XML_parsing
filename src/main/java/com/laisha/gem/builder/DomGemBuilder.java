@@ -4,6 +4,7 @@ import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
+import com.laisha.gem.entity.enums.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
 import org.apache.logging.log4j.Level;
@@ -82,7 +83,7 @@ public class DomGemBuilder extends AbstractGemBuilder {
         currentGem.setName(name);
         String originCountry =
                 getElementTextContent(gemElement, GemXmlTag.ORIGIN_COUNTRY.toString());
-        currentGem.setOriginCountry(originCountry);
+        currentGem.setOriginCountry(GemOriginCountry.valueOfXmlContent(originCountry));
         String registrationDate =
                 getElementTextContent(gemElement, GemXmlTag.REGISTRATION_DATE.toString());
         currentGem.setRegistrationDate(LocalDate.parse(registrationDate));

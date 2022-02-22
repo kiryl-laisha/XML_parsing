@@ -19,7 +19,8 @@ import java.io.IOException;
 public class SaxGemBuilder extends AbstractGemBuilder {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final ContentedFileDefinition fileContent = ContentedFileDefinition.getInstance();
+    private static final ContentedFileDefinition fileDefinition =
+            ContentedFileDefinition.getInstance();
     private final GemHandler handler;
     private XMLReader reader;
 
@@ -43,7 +44,7 @@ public class SaxGemBuilder extends AbstractGemBuilder {
     @Override
     public void buildGems(String filepath) throws ProjectException {
 
-        File file = fileContent.defineFileForData(filepath);
+        File file = fileDefinition.defineFileForData(filepath);
         try {
             reader.parse(String.valueOf(file));
         } catch (IOException | SAXException e) {

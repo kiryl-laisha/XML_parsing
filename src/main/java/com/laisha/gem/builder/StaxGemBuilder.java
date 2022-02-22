@@ -4,6 +4,7 @@ import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
+import com.laisha.gem.entity.enums.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
 import org.apache.logging.log4j.Level;
@@ -96,7 +97,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
                 currentGem.setName(text);
                 break;
             case ORIGIN_COUNTRY:
-                currentGem.setOriginCountry(text);
+                currentGem.setOriginCountry(GemOriginCountry.valueOfXmlContent(text));
                 break;
             case FACET_NUMBER:
                 parameters.setFacetNumber(Integer.parseInt(text));
