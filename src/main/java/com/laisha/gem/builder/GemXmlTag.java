@@ -18,8 +18,8 @@ public enum GemXmlTag {
     VALUE,
     WEIGHT;
 
-    private static final char UNDERSCORE = '_';
-    private static final char HYPHEN = '-';
+    private static final String UNDERSCORE = "_";
+    private static final String HYPHEN = "-";
 
     @Override
     public String toString() {
