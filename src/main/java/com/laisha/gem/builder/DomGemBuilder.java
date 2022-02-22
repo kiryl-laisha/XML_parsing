@@ -47,7 +47,7 @@ public class DomGemBuilder extends AbstractGemBuilder {
     protected void buildGems(String filepath) throws ProjectException {
 
         Document document;
-        File file = fileContent.defineFilePathForData(filepath);
+        File file = fileContent.defineFileForData(filepath);
         try {
             document = documentBuilder.parse(file);
         } catch (IOException | SAXException e) {

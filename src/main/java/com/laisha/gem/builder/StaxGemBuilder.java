@@ -39,7 +39,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
 
         logger.log(Level.DEBUG, "Gem StAX builder has started.");
         XMLStreamReader reader;
-        File file = fileContent.defineFilePathForData(filepath);
+        File file = fileContent.defineFileForData(filepath);
         try (FileInputStream inputStream = new FileInputStream(file)) {
             reader = factory.createXMLStreamReader(inputStream);
             int type;

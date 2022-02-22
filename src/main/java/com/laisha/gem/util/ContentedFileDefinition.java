@@ -19,7 +19,7 @@ public class ContentedFileDefinition {
         return instance;
     }
 
-    public File defineFilePathForData(String filepath)
+    public File defineFileForData(String filepath)
             throws ProjectException {
 
         FilePathValidatorImpl validator = FilePathValidatorImpl.getInstance();
