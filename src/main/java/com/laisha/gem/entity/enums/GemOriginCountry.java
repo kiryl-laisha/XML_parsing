@@ -12,8 +12,8 @@ public enum GemOriginCountry {
     USA,
     ZAMBIA;
 
-    private static final String UNDERSCORE = "_";
     private static final String HYPHEN = "-";
+    private static final String UNDERSCORE = "_";
 
     public static GemOriginCountry valueOfXmlContent(String content) {
         return GemOriginCountry.valueOf(content.toUpperCase().replace(HYPHEN, UNDERSCORE));

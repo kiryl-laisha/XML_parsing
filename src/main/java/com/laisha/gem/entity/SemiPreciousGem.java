@@ -1,5 +1,7 @@
 package com.laisha.gem.entity;
 
+import com.laisha.gem.entity.enums.GemOriginCountry;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,7 +14,7 @@ public class SemiPreciousGem extends AbstractGem {
 
     public SemiPreciousGem(String gemId,
                            String name,
-                           String originCountry,
+                           GemOriginCountry originCountry,
                            GemVisualParameters parameters,
                            LocalDate registrationDate,
                            double weight,

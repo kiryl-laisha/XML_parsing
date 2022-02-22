@@ -1,32 +1,34 @@
 package com.laisha.gem.entity;
 
+import com.laisha.gem.entity.enums.GemColour;
+
 public class GemVisualParameters {
 
-    public static final boolean DEFAULT_CERTIFIED_GEM = false;
+    public static final String DEFAULT_IS_CERTIFIED = "false";
 
-    private String colour;
-    private boolean certified;
+    private GemColour colour;
+    private boolean isCertified;
     private int facetNumber;
     private int transparency;
 
     public GemVisualParameters() {
     }
 
-    public GemVisualParameters(String gemColour,
+    public GemVisualParameters(GemColour gemColour,
                                int facetNumber,
                                int transparency,
-                               boolean certified) {
+                               boolean isCertified) {
         this.colour = gemColour;
         this.facetNumber = facetNumber;
         this.transparency = transparency;
-        this.certified = certified;
+        this.isCertified = isCertified;
     }
 
-    public String getColour() {
+    public GemColour getColour() {
         return colour;
     }
 
-    public void setColour(String colour) {
+    public void setColour(GemColour colour) {
         this.colour = colour;
     }
 
@@ -47,11 +49,11 @@ public class GemVisualParameters {
     }
 
     public boolean getCertified() {
-        return certified;
+        return isCertified;
     }
 
     public void setCertified(boolean certified) {
-        this.certified = certified;
+        this.isCertified = certified;
     }
 
     @Override
@@ -63,7 +65,7 @@ public class GemVisualParameters {
 
         if (transparency != that.transparency) return false;
         if (facetNumber != that.facetNumber) return false;
-        if (certified != that.certified) return false;
+        if (isCertified != that.isCertified) return false;
         return colour != null ? colour.equals(that.colour) : that.colour == null;
     }
 
@@ -72,7 +74,7 @@ public class GemVisualParameters {
         int result = colour != null ? colour.hashCode() : 0;
         result = 31 * result + transparency;
         result = 31 * result + facetNumber;
-        result = 31 * result + (certified ? 1 : 0);
+        result = 31 * result + (isCertified ? 1 : 0);
         return result;
     }
 
@@ -82,7 +84,7 @@ public class GemVisualParameters {
         sb.append("gemColour='").append(colour).append('\'');
         sb.append(", gemTransparency=").append(transparency);
         sb.append(", gemFacetNumber=").append(facetNumber);
-        sb.append(", certifiedGem=").append(certified);
+        sb.append(", certifiedGem=").append(isCertified);
         sb.append('}');
         return sb.toString();
     }

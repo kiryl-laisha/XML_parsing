@@ -4,6 +4,7 @@ import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
+import com.laisha.gem.entity.enums.GemColour;
 import com.laisha.gem.entity.enums.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
@@ -48,7 +49,7 @@ public class DomGemBuilder extends AbstractGemBuilder {
     protected void buildGems(String filepath) throws ProjectException {
 
         Document document;
-        File file = fileContent.defineFileForData(filepath);
+        File file = fileContent.defineFileWithData(filepath);
         try {
             document = documentBuilder.parse(file);
         } catch (IOException | SAXException e) {
@@ -96,10 +97,10 @@ public class DomGemBuilder extends AbstractGemBuilder {
         String colour = parameters.getAttribute(GemXmlTag.COLOUR.toString());
         String certified = parameters.getAttribute(GemXmlTag.COLOUR.toString());
         if (!certified.isEmpty()) {
-            certified = String.valueOf(GemVisualParameters.DEFAULT_CERTIFIED_GEM);
+            certified = String.valueOf(GemVisualParameters.DEFAULT_IS_CERTIFIED);
         }
         GemVisualParameters visualParameters = new GemVisualParameters(
-                colour,
+                GemColour.valueOfXmlContent(colour),
                 Integer.parseInt(facetNumber),
                 Integer.parseInt(transparency),
                 Boolean.parseBoolean(certified));

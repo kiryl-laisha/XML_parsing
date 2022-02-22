@@ -4,6 +4,7 @@ import com.laisha.gem.entity.AbstractGem;
 import com.laisha.gem.entity.GemVisualParameters;
 import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
+import com.laisha.gem.entity.enums.GemColour;
 import com.laisha.gem.entity.enums.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
@@ -29,7 +30,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
     private static final char HYPHEN = '-';
     private final XMLInputFactory factory;
     private AbstractGem currentGem;
-    private GemVisualParameters parameters;
+    private GemVisualParameters currentParameters;
 
     public StaxGemBuilder() {
         factory = XMLInputFactory.newInstance();
@@ -40,7 +41,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
 
         logger.log(Level.DEBUG, "Gem StAX builder has started.");
         XMLStreamReader reader;
-        File file = fileContent.defineFileForData(filepath);
+        File file = fileContent.defineFileWithData(filepath);
         try (FileInputStream inputStream = new FileInputStream(file)) {
             reader = factory.createXMLStreamReader(inputStream);
             int type;
@@ -83,7 +84,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
                 fillGemAttribute(reader);
                 break;
             case PARAMETERS:
-                parameters = new GemVisualParameters();
+                currentParameters = new GemVisualParameters();
                 fillParametersAttribute(reader);
                 break;
         }
@@ -100,10 +101,10 @@ public class StaxGemBuilder extends AbstractGemBuilder {
                 currentGem.setOriginCountry(GemOriginCountry.valueOfXmlContent(text));
                 break;
             case FACET_NUMBER:
-                parameters.setFacetNumber(Integer.parseInt(text));
+                currentParameters.setFacetNumber(Integer.parseInt(text));
                 break;
             case TRANSPARENCY:
-                parameters.setTransparency(Integer.parseInt(text));
+                currentParameters.setTransparency(Integer.parseInt(text));
                 break;
             case PRICE:
                 currentGem.setPrice(BigDecimal.valueOf(Double.parseDouble(text)));
@@ -131,8 +132,8 @@ public class StaxGemBuilder extends AbstractGemBuilder {
                 currentGem = null;
                 break;
             case PARAMETERS:
-                currentGem.setParameters(parameters);
-                parameters = null;
+                currentGem.setParameters(currentParameters);
+                currentParameters = null;
                 break;
         }
     }
@@ -146,12 +147,12 @@ public class StaxGemBuilder extends AbstractGemBuilder {
     private void fillParametersAttribute(XMLStreamReader reader) {
 
         String colour = reader.getAttributeValue(null, COLOUR.toString());
-        parameters.setColour(colour);
-        String certified = reader.getAttributeValue(null, CERTIFIED.toString());
-        if (certified == null) {
-            certified = String.valueOf(GemVisualParameters.DEFAULT_CERTIFIED_GEM);
+        currentParameters.setColour(GemColour.valueOfXmlContent(colour));
+        String isCertified = reader.getAttributeValue(null, IS_CERTIFIED.toString());
+        if (isCertified == null) {
+            isCertified = String.valueOf(GemVisualParameters.DEFAULT_IS_CERTIFIED);
         }
-        parameters.setCertified(Boolean.parseBoolean(certified));
+        currentParameters.setCertified(Boolean.parseBoolean(isCertified));
     }
 
     private GemXmlTag defineGemXmlTag(String name) {

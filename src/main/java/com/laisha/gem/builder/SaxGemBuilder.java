@@ -44,7 +44,7 @@ public class SaxGemBuilder extends AbstractGemBuilder {
     @Override
     public void buildGems(String filepath) throws ProjectException {
 
-        File file = fileDefinition.defineFileForData(filepath);
+        File file = fileDefinition.defineFileWithData(filepath);
         try {
             reader.parse(String.valueOf(file));
         } catch (IOException | SAXException e) {
