@@ -1,4 +1,4 @@
-package com.laisha.gem.entity;
+package com.laisha.gem.entity.enums;
 
 public enum GemOriginCountry {
 
