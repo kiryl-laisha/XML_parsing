@@ -22,5 +22,5 @@ public abstract class AbstractGemBuilder {
         return gems;
     }
 
-    protected abstract void buildGems(String filename)  throws ProjectException;
+    protected abstract void buildGems(String filepath)  throws ProjectException;
 }

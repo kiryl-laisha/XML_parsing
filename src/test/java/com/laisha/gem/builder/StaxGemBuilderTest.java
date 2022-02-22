@@ -12,17 +12,17 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-class SaxGemBuilderTest {
+class StaxGemBuilderTest {
 
-    private static final String TEST_GEM_XML_FILEPATH ="data\\test_gem.xml";
-    private static final String TEST_GEM_EMPTY_XML_FILEPATH ="data/test_empty_file.xml";
-    private static SaxGemBuilder builder;
+    private static final String TEST_GEM_XML_FILEPATH = "data\\test_gem.xml";
+    private static final String TEST_GEM_EMPTY_XML_FILEPATH = "data/test_empty_file.xml";
+    private static StaxGemBuilder builder;
 
     @BeforeEach
     void setUp() {
-        builder = new SaxGemBuilder();
+        builder = new StaxGemBuilder();
     }
 
     @AfterAll
@@ -48,7 +48,7 @@ class SaxGemBuilderTest {
 
     @ParameterizedTest
     @NullAndEmptySource
-    @DisplayName("Has an exception when filepath is null or empty string.")
+    @DisplayName("Throws an exception when filepath is null or empty string.")
     void buildGemsFirstNegativeTest(String filepath) {
 
         String expectedExceptionMessage = "Working with file is impossible.";
@@ -63,7 +63,7 @@ class SaxGemBuilderTest {
 
     @ParameterizedTest
     @ValueSource(strings = {TEST_GEM_EMPTY_XML_FILEPATH})
-    @DisplayName("Has an exception when file is empty.")
+    @DisplayName("Throws an exception when file is empty.")
     void buildGemsSecondNegativeTest(String filepath) {
 
         String expectedExceptionMessage = "File \"" + filepath + "\" " +

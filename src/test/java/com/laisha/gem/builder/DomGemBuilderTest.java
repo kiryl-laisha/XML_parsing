@@ -18,7 +18,7 @@ class DomGemBuilderTest {
 
     private static final String TEST_GEM_XML_FILEPATH = "data\\test_gem.xml";
     private static final String TEST_GEM_EMPTY_XML_FILEPATH = "data/test_empty_file.xml";
-    private static DomGemBuilder builder = new DomGemBuilder();
+    private static DomGemBuilder builder;
 
     @BeforeEach
     void setUp() {
