@@ -58,6 +58,7 @@ public class GemVisualParameters {
 
     @Override
     public boolean equals(Object o) {
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -71,6 +72,7 @@ public class GemVisualParameters {
 
     @Override
     public int hashCode() {
+
         int result = colour != null ? colour.hashCode() : 0;
         result = 31 * result + transparency;
         result = 31 * result + facetNumber;
@@ -81,10 +83,10 @@ public class GemVisualParameters {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("GemVisualParameters{");
-        sb.append("gemColour='").append(colour).append('\'');
-        sb.append(", gemTransparency=").append(transparency);
-        sb.append(", gemFacetNumber=").append(facetNumber);
-        sb.append(", certifiedGem=").append(isCertified);
+        sb.append("colour=").append(colour);
+        sb.append(", isCertified=").append(isCertified);
+        sb.append(", facetNumber=").append(facetNumber);
+        sb.append(", transparency=").append(transparency);
         sb.append('}');
         return sb.toString();
     }
