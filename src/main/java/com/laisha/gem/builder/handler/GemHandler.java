@@ -67,7 +67,7 @@ public class GemHandler extends DefaultHandler {
             if (isCertified == null) {
                 isCertified = GemVisualParameters.DEFAULT_IS_CERTIFIED;
             }
-            currentParameters.setCertified(Boolean.parseBoolean(isCertified));
+            currentParameters.setIsCertified(Boolean.parseBoolean(isCertified));
             return;
         }
         GemXmlTag temporaryTag = tagConverter.convertXmlTag(qName);

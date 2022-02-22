@@ -48,11 +48,11 @@ public class GemVisualParameters {
         this.facetNumber = facetNumber;
     }
 
-    public boolean getCertified() {
+    public boolean getIsCertified() {
         return isCertified;
     }
 
-    public void setCertified(boolean certified) {
+    public void setIsCertified(boolean certified) {
         this.isCertified = certified;
     }
 

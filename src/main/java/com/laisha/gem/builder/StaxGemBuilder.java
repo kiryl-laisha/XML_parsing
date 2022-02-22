@@ -8,6 +8,7 @@ import com.laisha.gem.entity.enums.GemColour;
 import com.laisha.gem.entity.enums.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
+import com.laisha.gem.util.XmlTagConverter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +17,9 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -26,8 +29,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
 
     private static final Logger logger = LogManager.getLogger();
     private static final ContentedFileDefinition fileContent = ContentedFileDefinition.getInstance();
-    private static final char UNDERSCORE = '_';
-    private static final char HYPHEN = '-';
+    private static final XmlTagConverter tagConverter = XmlTagConverter.getInstance();
     private final XMLInputFactory factory;
     private AbstractGem currentGem;
     private GemVisualParameters currentParameters;
@@ -73,7 +75,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
     private GemXmlTag processElement(XMLStreamReader reader) {
 
         String elementName = reader.getLocalName();
-        GemXmlTag tagName = defineGemXmlTag(elementName);
+        GemXmlTag tagName = tagConverter.convertXmlTag(elementName);
         switch (tagName) {
             case PRECIOUS_GEM:
                 currentGem = new PreciousGem();
@@ -100,12 +102,6 @@ public class StaxGemBuilder extends AbstractGemBuilder {
             case ORIGIN_COUNTRY:
                 currentGem.setOriginCountry(GemOriginCountry.valueOfXmlContent(text));
                 break;
-            case FACET_NUMBER:
-                currentParameters.setFacetNumber(Integer.parseInt(text));
-                break;
-            case TRANSPARENCY:
-                currentParameters.setTransparency(Integer.parseInt(text));
-                break;
             case PRICE:
                 currentGem.setPrice(BigDecimal.valueOf(Double.parseDouble(text)));
                 break;
@@ -118,13 +114,19 @@ public class StaxGemBuilder extends AbstractGemBuilder {
             case WEIGHT:
                 ((SemiPreciousGem) currentGem).setWeight(Double.parseDouble(text));
                 break;
+            case FACET_NUMBER:
+                currentParameters.setFacetNumber(Integer.parseInt(text));
+                break;
+            case TRANSPARENCY:
+                currentParameters.setTransparency(Integer.parseInt(text));
+                break;
         }
     }
 
     private void finishElement(XMLStreamReader reader) {
 
         String elementName = reader.getLocalName();
-        GemXmlTag tagName = defineGemXmlTag(elementName);
+        GemXmlTag tagName = tagConverter.convertXmlTag(elementName);
         switch (tagName) {
             case PRECIOUS_GEM:
             case SEMIPRECIOUS_GEM:
@@ -150,12 +152,8 @@ public class StaxGemBuilder extends AbstractGemBuilder {
         currentParameters.setColour(GemColour.valueOfXmlContent(colour));
         String isCertified = reader.getAttributeValue(null, IS_CERTIFIED.toString());
         if (isCertified == null) {
-            isCertified = String.valueOf(GemVisualParameters.DEFAULT_IS_CERTIFIED);
+            isCertified = GemVisualParameters.DEFAULT_IS_CERTIFIED;
         }
-        currentParameters.setCertified(Boolean.parseBoolean(isCertified));
-    }
-
-    private GemXmlTag defineGemXmlTag(String name) {
-        return GemXmlTag.valueOf(name.toUpperCase().replace(HYPHEN, UNDERSCORE));
+        currentParameters.setIsCertified(Boolean.parseBoolean(isCertified));
     }
 }
