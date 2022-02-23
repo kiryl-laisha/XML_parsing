@@ -1,7 +1,5 @@
 package com.laisha.gem.entity;
 
-import com.laisha.gem.entity.enums.GemColour;
-
 public class GemVisualParameters {
 
     public static final String DEFAULT_IS_CERTIFIED = "false";

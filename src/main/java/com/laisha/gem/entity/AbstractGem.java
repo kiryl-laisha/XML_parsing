@@ -1,7 +1,5 @@
 package com.laisha.gem.entity;
 
-import com.laisha.gem.entity.enums.GemOriginCountry;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
