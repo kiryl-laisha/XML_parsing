@@ -1,7 +1,7 @@
 package com.laisha.gem.util;
 
 import com.laisha.gem.exception.ProjectException;
-import com.laisha.gem.validator.impl.FilePathValidatorImpl;
+import com.laisha.gem.validator.FilePathValidator;
 
 import java.io.File;
 import java.net.URL;
@@ -22,7 +22,7 @@ public class ContentedFileDefinition {
     public File defineFileWithData(String filepath)
             throws ProjectException {
 
-        FilePathValidatorImpl validator = FilePathValidatorImpl.getInstance();
+        FilePathValidator validator = FilePathValidator.getInstance();
         boolean isFilePathValid = validator.validateFilePath(filepath);
         if (!isFilePathValid) {
             throw new ProjectException("Working with file is impossible.");
