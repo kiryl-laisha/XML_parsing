@@ -5,7 +5,7 @@ import java.time.LocalDate;
 
 public class PreciousGem extends AbstractGem {
 
-    private double value;
+    private double caratValue;
 
     public PreciousGem() {
     }
@@ -15,18 +15,18 @@ public class PreciousGem extends AbstractGem {
                        GemOriginCountry originCountry,
                        GemVisualParameters parameters,
                        LocalDate registrationDate,
-                       double value,
+                       double caratValue,
                        BigDecimal price) {
         super(gemId, name, originCountry, parameters, registrationDate, price);
-        this.value = value;
+        this.caratValue = caratValue;
     }
 
-    public double getValue() {
-        return value;
+    public double getCaratValue() {
+        return caratValue;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public void setCaratValue(double caratValue) {
+        this.caratValue = caratValue;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class PreciousGem extends AbstractGem {
         if (!(o instanceof PreciousGem)) return false;
         if (!super.equals(o)) return false;
         PreciousGem that = (PreciousGem) o;
-        return Double.compare(that.value, value) == 0;
+        return Double.compare(that.caratValue, caratValue) == 0;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class PreciousGem extends AbstractGem {
 
         int result = super.hashCode();
         long temp;
-        temp = Double.doubleToLongBits(value);
+        temp = Double.doubleToLongBits(caratValue);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
@@ -54,7 +54,7 @@ public class PreciousGem extends AbstractGem {
 
         final StringBuilder sb = new StringBuilder("PreciousGem{");
         sb.append(super.toString());
-        sb.append("value=").append(value);
+        sb.append(", caratValue=").append(caratValue);
         sb.append('}');
         return sb.toString();
     }

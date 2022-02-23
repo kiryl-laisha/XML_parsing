@@ -109,7 +109,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
                 currentGem.setRegistrationDate(LocalDate.parse(text));
                 break;
             case VALUE:
-                ((PreciousGem) currentGem).setValue(Double.parseDouble(text));
+                ((PreciousGem) currentGem).setCaratValue(Double.parseDouble(text));
                 break;
             case WEIGHT:
                 ((SemiPreciousGem) currentGem).setWeight(Double.parseDouble(text));

@@ -102,7 +102,7 @@ public class GemHandler extends DefaultHandler {
                     currentParameters.setTransparency(Integer.parseInt(text));
                     break;
                 case VALUE:
-                    ((PreciousGem) currentGem).setValue(Double.parseDouble(text));
+                    ((PreciousGem) currentGem).setCaratValue(Double.parseDouble(text));
                     break;
                 case WEIGHT:
                     ((SemiPreciousGem) currentGem).setWeight(Double.parseDouble(text));
