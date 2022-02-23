@@ -93,9 +93,9 @@ public class StaxGemBuilder extends AbstractGemBuilder {
         return tagName;
     }
 
-    private void processText(String text, GemXmlTag tagName) {
+    private void processText(String text, GemXmlTag currentXmlTag) {
 
-        switch (tagName) {
+        switch (currentXmlTag) {
             case NAME:
                 currentGem.setName(text);
                 break;
@@ -120,6 +120,9 @@ public class StaxGemBuilder extends AbstractGemBuilder {
             case TRANSPARENCY:
                 currentParameters.setTransparency(Integer.parseInt(text));
                 break;
+            default:
+                throw new EnumConstantNotPresentException(
+                        currentXmlTag.getDeclaringClass(), currentXmlTag.name());
         }
     }
 

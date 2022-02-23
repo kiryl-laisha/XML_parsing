@@ -107,6 +107,9 @@ public class GemHandler extends DefaultHandler {
                 case WEIGHT:
                     ((SemiPreciousGem) currentGem).setWeight(Double.parseDouble(text));
                     break;
+                default:
+                    throw new EnumConstantNotPresentException(
+                            currentXmlTag.getDeclaringClass(), currentXmlTag.name());
             }
         }
         currentXmlTag = null;
