@@ -33,7 +33,7 @@
         <complexContent>
             <extension base="gm:abstractGem">
                 <sequence>
-                    <element name="value" type="gm:gemValue"/>
+                    <element name="carat-value" type="gm:gemValue"/>
                 </sequence>
             </extension>
         </complexContent>
@@ -81,7 +81,7 @@
             <element name="facet-number" type="gm:facetNumber"/>
         </all>
         <attribute name="colour" type="gm:gemColour" use="required"/>
-        <attribute name="certified" type="boolean" use="optional"
+        <attribute name="is-certified" type="boolean" use="optional"
                    default="false"/>
     </complexType>
 

@@ -15,7 +15,7 @@ public enum GemXmlTag {
     REGISTRATION_DATE,
     PRICE,
     TRANSPARENCY,
-    VALUE,
+    CARAT_VALUE,
     WEIGHT;
 
     private static final String UNDERSCORE = "_";

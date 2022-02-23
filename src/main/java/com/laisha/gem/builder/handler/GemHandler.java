@@ -7,7 +7,6 @@ import com.laisha.gem.entity.PreciousGem;
 import com.laisha.gem.entity.SemiPreciousGem;
 import com.laisha.gem.entity.GemColour;
 import com.laisha.gem.entity.GemOriginCountry;
-import com.laisha.gem.util.XmlTagConverter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,7 +22,8 @@ import java.util.Set;
 public class GemHandler extends DefaultHandler {
 
     private static final Logger logger = LogManager.getLogger();
-    private static final XmlTagConverter tagConverter = XmlTagConverter.getInstance();
+    private static final String HYPHEN = "-";
+    private static final String UNDERSCORE = "_";
     private final Set<AbstractGem> gems;
     private final EnumSet<GemXmlTag> containedText;
     private AbstractGem currentGem;
@@ -46,6 +46,7 @@ public class GemHandler extends DefaultHandler {
 
         logger.log(Level.DEBUG, "Gem SAX handler has finished.");
         currentXmlTag = null;
+        currentGem = null;
     }
 
     @Override
@@ -70,12 +71,11 @@ public class GemHandler extends DefaultHandler {
             currentParameters.setIsCertified(Boolean.parseBoolean(isCertified));
             return;
         }
-        GemXmlTag temporaryTag = tagConverter.convertXmlTag(qName);
+        GemXmlTag temporaryTag = GemXmlTag.valueOf(toConstantName(qName));
         if (containedText.contains(temporaryTag)) {
             currentXmlTag = temporaryTag;
         }
     }
-
 
     @Override
     public void characters(char[] ch, int start, int length) {
@@ -101,7 +101,7 @@ public class GemHandler extends DefaultHandler {
                 case TRANSPARENCY:
                     currentParameters.setTransparency(Integer.parseInt(text));
                     break;
-                case VALUE:
+                case CARAT_VALUE:
                     ((PreciousGem) currentGem).setCaratValue(Double.parseDouble(text));
                     break;
                 case WEIGHT:
@@ -122,7 +122,6 @@ public class GemHandler extends DefaultHandler {
         String semipreciousGemTag = GemXmlTag.SEMIPRECIOUS_GEM.toString();
         if (preciousGemTag.equals(qName) || semipreciousGemTag.equals(qName)) {
             gems.add(currentGem);
-            currentGem = null;
         }
         String gemParametersTag = GemXmlTag.PARAMETERS.toString();
         if (gemParametersTag.equals(qName)) {
@@ -133,5 +132,9 @@ public class GemHandler extends DefaultHandler {
 
     public Set<AbstractGem> getGems() {
         return gems;
+    }
+
+    private String toConstantName(String tagName) {
+        return tagName.replace(HYPHEN, UNDERSCORE).toUpperCase();
     }
 }

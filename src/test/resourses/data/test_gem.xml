@@ -6,7 +6,7 @@
     <precious-gem id="g000001">
         <name>Ruby</name>
         <origin-country>Madagascar</origin-country>
-        <parameters colour="red" certified="true">
+        <parameters colour="red" is-certified="true">
             <transparency>5</transparency>
             <facet-number>12</facet-number>
         </parameters>
@@ -18,7 +18,7 @@
     <precious-gem id="g000002">
         <name>Sapphire</name>
         <origin-country>Madagascar</origin-country>
-        <parameters colour="brown" certified="true">
+        <parameters colour="brown" is-certified="true">
             <facet-number>14</facet-number>
             <transparency>15</transparency>
         </parameters>
@@ -30,7 +30,7 @@
     <precious-gem id="g000003">
         <name>Diamond</name>
         <origin-country>Russia</origin-country>
-        <parameters colour="white" certified="true">
+        <parameters colour="white" is-certified="true">
             <transparency>98</transparency>
             <facet-number>12</facet-number>
         </parameters>
@@ -42,7 +42,7 @@
     <precious-gem id="g000004">
         <name>Emerald</name>
         <origin-country>Zambia</origin-country>
-        <parameters colour="green" certified="true">
+        <parameters colour="green" is-certified="true">
             <facet-number>8</facet-number>
             <transparency>26</transparency>
         </parameters>
@@ -54,7 +54,7 @@
     <precious-gem id="g000005">
         <name>Diamond</name>
         <origin-country>Russia</origin-country>
-        <parameters colour="white" certified="true">
+        <parameters colour="white" is-certified="true">
             <transparency>98</transparency>
             <facet-number>14</facet-number>
         </parameters>
@@ -66,7 +66,7 @@
     <precious-gem id="g000006">
         <name>Ruby</name>
         <origin-country>Madagascar</origin-country>
-        <parameters colour="red" certified="true">
+        <parameters colour="red" is-certified="true">
             <facet-number>12</facet-number>
             <transparency>8</transparency>
         </parameters>
@@ -78,7 +78,7 @@
     <precious-gem id="g000007">
         <name>Emerald</name>
         <origin-country>Zambia</origin-country>
-        <parameters colour="green" certified="true">
+        <parameters colour="green" is-certified="true">
             <transparency>22</transparency>
             <facet-number>12</facet-number>
         </parameters>
@@ -90,7 +90,7 @@
     <precious-gem id="g000008">
         <name>Sapphire</name>
         <origin-country>Madagascar</origin-country>
-        <parameters colour="blue" certified="true">
+        <parameters colour="blue" is-certified="true">
             <facet-number>12</facet-number>
             <transparency>13</transparency>
         </parameters>
@@ -102,7 +102,7 @@
     <semiprecious-gem id="g000009">
         <name>Charoite</name>
         <origin-country>Russia</origin-country>
-        <parameters colour="violet" certified="true">
+        <parameters colour="violet" is-certified="true">
             <transparency>2</transparency>
             <facet-number>4</facet-number>
         </parameters>
@@ -126,7 +126,7 @@
     <semiprecious-gem id="g000011">
         <name>Obsidian</name>
         <origin-country>USA</origin-country>
-        <parameters colour="black" certified="true">
+        <parameters colour="black" is-certified="true">
             <facet-number>4</facet-number>
             <transparency>1</transparency>
         </parameters>

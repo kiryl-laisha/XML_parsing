@@ -8,7 +8,6 @@ import com.laisha.gem.entity.GemColour;
 import com.laisha.gem.entity.GemOriginCountry;
 import com.laisha.gem.exception.ProjectException;
 import com.laisha.gem.util.ContentedFileDefinition;
-import com.laisha.gem.util.XmlTagConverter;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,7 +28,8 @@ public class StaxGemBuilder extends AbstractGemBuilder {
 
     private static final Logger logger = LogManager.getLogger();
     private static final ContentedFileDefinition fileContent = ContentedFileDefinition.getInstance();
-    private static final XmlTagConverter tagConverter = XmlTagConverter.getInstance();
+    private static final String HYPHEN = "-";
+    private static final String UNDERSCORE = "_";
     private final XMLInputFactory factory;
     private AbstractGem currentGem;
     private GemVisualParameters currentParameters;
@@ -75,7 +75,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
     private GemXmlTag processElement(XMLStreamReader reader) {
 
         String elementName = reader.getLocalName();
-        GemXmlTag tagName = tagConverter.convertXmlTag(elementName);
+        GemXmlTag tagName = GemXmlTag.valueOf(toConstantName(elementName));
         switch (tagName) {
             case PRECIOUS_GEM:
                 currentGem = new PreciousGem();
@@ -108,7 +108,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
             case REGISTRATION_DATE:
                 currentGem.setRegistrationDate(LocalDate.parse(text));
                 break;
-            case VALUE:
+            case CARAT_VALUE:
                 ((PreciousGem) currentGem).setCaratValue(Double.parseDouble(text));
                 break;
             case WEIGHT:
@@ -129,7 +129,7 @@ public class StaxGemBuilder extends AbstractGemBuilder {
     private void finishElement(XMLStreamReader reader) {
 
         String elementName = reader.getLocalName();
-        GemXmlTag tagName = tagConverter.convertXmlTag(elementName);
+        GemXmlTag tagName = GemXmlTag.valueOf(toConstantName(elementName));
         switch (tagName) {
             case PRECIOUS_GEM:
             case SEMIPRECIOUS_GEM:
@@ -158,5 +158,9 @@ public class StaxGemBuilder extends AbstractGemBuilder {
             isCertified = GemVisualParameters.DEFAULT_IS_CERTIFIED;
         }
         currentParameters.setIsCertified(Boolean.parseBoolean(isCertified));
+    }
+
+    private String toConstantName(String tagName) {
+        return tagName.replace(HYPHEN, UNDERSCORE).toUpperCase();
     }
 }

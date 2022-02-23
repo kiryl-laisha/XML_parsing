@@ -110,7 +110,7 @@ public class DomGemBuilder extends AbstractGemBuilder {
 
     private void buildPreciousGem(Element gemElement) {
 
-        String value = getElementTextContent(gemElement, GemXmlTag.VALUE.toString());
+        String value = getElementTextContent(gemElement, GemXmlTag.CARAT_VALUE.toString());
         ((PreciousGem) currentGem).setCaratValue(Double.parseDouble(value));
     }
 
